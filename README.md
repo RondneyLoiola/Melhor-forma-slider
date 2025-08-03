@@ -2,5 +2,6 @@
 
 <h2>Tecnologias utilizadas: 🛠️</h2>
 -HTML: Estruturação
+<br>
 -CSS: Estilização
 
