@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+main {
+    width: 100%;
+    height: 50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 5%;
+    overflow: hidden;
+}
+
+#papai {
+    width: fit-content;
+    display: flex;
+    gap: 20px;
+
+    animation: slide 10s linear infinite;
+}
+
+#papai:hover {
+    animation-play-state: paused;
+}
+
+#papai .filhos {
+    flex-shrink: 0;
+    transition: .2s transform, .2s box-shadow;
+    width: 300px;
+    height: 300px;
+    aspect-ratio: 1;
+    border-radius: 12px;
+    cursor: pointer;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
+    }
+    &:hover {
+        transform: translateY(-20px);
+        box-shadow: 0 10px 20px 1px #3333332a;
+    }
+}
+
+
+@keyframes slide {
+    0% { /*200 do tamanho do filho e 50 do gap*/ /*o -1 significa o primeiro filho */
+        transform: translateX(calc((300px + 20px) * (-1))); 
+    }
+    100% { /* o -7 significa o número de elementos */
+        transform: translateX(calc((300px + 20px) * (-7)));
+    }
+}
